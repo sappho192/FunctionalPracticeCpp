@@ -19,7 +19,7 @@ std::string strFormat(stringstream& sstream, T0 param0, Tn... paramN)
 }
 
 template <typename F>
-auto call(F f) {
+auto calltest(F f) {
 	int i = 1;
 	stringstream sstream;
 	CustomerOriginal customer;
@@ -58,7 +58,7 @@ int main()
 
 	
 	auto func = [](CustomerOriginal customer) { return customer.name; };
-	call(func);
+	calltest(func);
 
 	system("pause");
 	return 0;
