@@ -7,3 +7,5 @@ using std::endl;
 using std::stringstream;
 
 #include "CustomerOriginal.h"
+
+int main();

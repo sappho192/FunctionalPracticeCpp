@@ -18,6 +18,20 @@ std::string strFormat(stringstream& sstream, T0 param0, Tn... paramN)
 	return strFormat(sstream, paramN...);
 }
 
+template <typename F>
+auto call(F f) {
+	int i = 1;
+	stringstream sstream;
+	CustomerOriginal customer;
+	customer.name = strFormat(sstream, "Person ", i);
+	customer.address = strFormat(sstream, "Addr", i);
+	customer.domain = strFormat(sstream, "Domain", i);
+	customer.id = i;
+	customer.state = strFormat(sstream, "State", (i % 2));
+	customer.primarycontact = "111";
+	cout << "I got " << f(customer) << endl;
+}
+
 int main()
 {
 	stringstream sstream;
@@ -41,6 +55,10 @@ int main()
 	{
 		cout << addr << endl;
 	}
+
+	
+	auto func = [](CustomerOriginal customer) { return customer.name; };
+	call(func);
 
 	system("pause");
 	return 0;
