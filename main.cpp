@@ -19,7 +19,7 @@ std::string strFormat(stringstream& sstream, T0 param0, Tn... paramN)
 }
 
 template <typename F>
-auto calltest(F f) {
+auto calltest(F &&f) {
 	int i = 1;
 	stringstream sstream;
 	CustomerOriginal customer;
